@@ -1,31 +1,30 @@
 // https://www.chaijs.com/guide/styles/
 
 const { expect } = require("chai");
-const { add, isEven } = require("../src/math");
+const { mod, divide } = require("../src/math");
 
 describe("math.js (expect skeleton)", () => {
-  describe("add()", () => {
-    it.skip("should add two numbers correctly", () => {
-      // TODO: use expect(...) to check add(2, 3) === 5
+  describe("mod()", () => {
+    it("should return the remainder of division", () => {
+      expect(mod(10, 3)).to.equal(1)
     });
 
-    it.skip("should throw an error if inputs are not numbers", () => {
-      // TODO: use expect(() => ...).to.throw(...)
+    it("should throw an error if inputs are not numbers", () => {
+      expect(() => mod("a", 3)).to.throw("Inputs must be numbers")
     });
   });
 
-  describe("isEven()", () => {
-    it.skip("should return true for even numbers", () => {
-      // TODO
+  describe("divide()", () => {
+    it("should divide two numbers correctly", () => {
+      expect(divide(10, 2)).to.equal(5)
     });
 
-    it.skip("should return false for odd numbers", () => {
-      // TODO
+    it("should throw an error if inputs are not numbers", () => {
+      expect(() => divide(10, "a")).to.throw("Inputs must be numbers")
     });
 
-    it.skip("should throw an error if input is not a number", () => {
-      // TODO
+    it("should throw an error when dividing by zero", () => {
+      expect(() => divide(10, 0)).to.throw("Cannot divide by zero")
     });
   });
 });
-

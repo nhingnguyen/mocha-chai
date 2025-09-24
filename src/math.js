@@ -4,8 +4,21 @@ function add(a, b) {
   if (typeof a !== "number" || typeof b !== "number") {
     throw new Error("Inputs must be numbers");
   }
+  return a + b;
+}
 
-  return a + b + 1;
+function subtract(a, b) {
+  if (typeof a !== "number" || typeof b !== "number") {
+    throw new Error("Inputs must be numbers");
+  }
+  return a - b;
+}
+
+function multiply(a, b) {
+  if (typeof a !== "number" || typeof b !== "number") {
+    throw new Error("Inputs must be numbers");
+  }
+  return a * b;
 }
 
 function isEven(n) {
@@ -15,4 +28,21 @@ function isEven(n) {
   return n % 2 === 0;
 }
 
-module.exports = { add, isEven };
+function mod(a, b) {
+  if (typeof a !== "number" || typeof b !== "number") {
+    throw new Error("Inputs must be numbers");
+  }
+  return a % b;
+}
+
+function divide(a, b) {
+  if (typeof a !== "number" || typeof b !== "number") {
+    throw new Error("Inputs must be numbers");
+  }
+  if (b === 0) {
+    throw new Error("Cannot divide by zero");
+  }
+  return a / b;
+}
+
+module.exports = { add, multiply, isEven, mod, divide, subtract };
